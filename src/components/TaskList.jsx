@@ -1,20 +1,20 @@
 
-import React from 'react';
-import TaskItem from './TaskItem';
+import { TaskItem } from './TaskItem'
 
-const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
+export const TaskList = ({tasks, handleComplete, handleDelete} ) => {
+
   return (
-    <ul>
-      {tasks.map(task => (
-        <TaskItem
-          key={task.id}
-          task={task}
-          onTaskComplete={onTaskComplete}
-          onTaskDelete={onTaskDelete}
-        />
-      ))}
-    </ul>
-  );
-};
+    <div className='taskList'>
+        {tasks.map(task => (
+            <TaskItem
+            key={task.id}
+            task={task}
+            handleComplete={handleComplete}
+            handleDelete={handleDelete}
+            />
+        ))}
+    </div>
+  )
+}
 
 export default TaskList;
